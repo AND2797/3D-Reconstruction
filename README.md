@@ -19,6 +19,6 @@ A high-level overview of the algorithm is given below -
 ## Results
 | Image1  | Image2  |
 |---------|---------|
-|[im1.png](src/data/im1.png)         |         |
+|![im1.png](https://i.imgur.com/4cCAwyT.png)         |         |
 
 ## Resources
