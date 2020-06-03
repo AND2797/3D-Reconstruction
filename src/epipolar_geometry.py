@@ -109,7 +109,7 @@ class epi_geom:
         return w, err
     
     def findBestM2(self, pts1, pts2):
-    
+        # import pdb; pdb.set_trace()
         M1 = np.zeros((3,4))
         M1[0,0] = 1
         M1[1,1] = 1
@@ -129,10 +129,11 @@ class epi_geom:
             self.C2 = np.dot(self.K2, M2s[:,:,i])
             w, err = self.triangulate(pts1, pts2)#.C1, self.pts1,C2, self.pts2)
             if err < min_err:
-                min_err = err
-                index_min = i
-                C2_min = self.C2
-                w_min = w
+                if np.min(w[:,2]) >= 0:
+                    min_err = err
+                    index_min = i
+                    C2_min = self.C2
+                    w_min = w
                # print(min_err)
 
         self.C2 = C2_min
@@ -184,30 +185,8 @@ class epi_geom:
         points1 = np.append(x1, y1, axis=1)
         points2 = np.append(x2, y2, axis=1)
     
-        M1 = np.zeros((3,4))
-        M1[0,0] = 1
-        M1[1,1] = 1
-        M1[2,2] = 1
-    
-        M2s = camera2(self.E)
-    
-        self.C1 = np.dot(self.K1, M1)
-    
-        min_error = math.inf
-        min_P = 0
-    
-    
-        for i in range(4):
-            self.C2 = np.dot(self.K2, M2s[:, :, i])
-            P, error = self.triangulate(points1, points2)#C1, points1, C2, points2)
-            if error < min_error:
-                if np.min(P[:, 2] >= 0):
-                    M2, self.C2, w = self.findBestM2(points1, points2)
-                    min_P = P
-                    min_error = error
-            
-            
-            P = min_P
+        # _, self.C2,__ = self.findBestM2()
+        best_M2, self.C2, P = self.findBestM2(points1, points2)
     
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
