@@ -17,21 +17,21 @@ class epi_geom:
         self.C2 = C2
     
 
-    def estimate_F(self, im1, im2, pts1, pts2):
+    def estimate_F(self, im1, im2):
         M = max(im1.shape)
-        pts1 = pts1 / M
-        pts2 = pts2 / M
-        totalpts = pts1.shape[0]
+        self.pts1 = self.pts1 / M
+        self.pts2 = self.pts2 / M
+        totalpts = self.pts1.shape[0]
 
         a = np.zeros((totalpts, 9))
-        a[:,0] = pts2[:,0]*pts1[:,0]
-        a[:,1] = pts2[:,0]*pts1[:,1]
-        a[:,2] = pts2[:,0] 
-        a[:,3] = pts2[:,1]*pts1[:,0]
-        a[:,4] = pts2[:,1]*pts1[:,1]
-        a[:,5] = pts2[:,1]
-        a[:,6] = pts1[:,0]
-        a[:,7] = pts1[:,1]
+        a[:,0] = self.pts2[:,0]*self.pts1[:,0]
+        a[:,1] = self.pts2[:,0]*self.pts1[:,1]
+        a[:,2] = self.pts2[:,0] 
+        a[:,3] = self.pts2[:,1]*self.pts1[:,0]
+        a[:,4] = self.pts2[:,1]*self.pts1[:,1]
+        a[:,5] = self.pts2[:,1]
+        a[:,6] = self.pts1[:,0]
+        a[:,7] = self.pts1[:,1]
         a[:,8] = np.ones(totalpts)
 
 
@@ -46,7 +46,7 @@ class epi_geom:
         #recompute F
         f_1 = np.dot(np.dot(uf_1,s),vf_1)
         
-        f_1 = refineF(f_1,pts1,pts2)
+        f_1 = refineF(f_1,self.pts1,self.pts2)
         
         #un-normalize
         T = np.diag([1.0/M,1.0/M,1.0])

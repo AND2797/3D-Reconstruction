@@ -20,7 +20,7 @@ def main():
     x2 = np.zeros((totalpts, 1))
     y2 = np.zeros((totalpts, 1))
     epipolar = epi_geom(pts1, pts2, K1, K2)
-    F = epipolar.estimate_F(im1, im2, pts1, pts2)
+    F = epipolar.estimate_F(im1, im2)
     E = epipolar.estimate_E(F)
     epipolar.visualize3D(totalpts, x2, y2, x1, y1, im1, im2)
     
