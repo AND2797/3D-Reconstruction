@@ -23,6 +23,7 @@ A high-level overview of the algorithm is given below -
 |![im1](https://i.imgur.com/4cCAwyT.png)         | ![im2](https://i.imgur.com/aa1Xnjs.png)        |
 
 ### Reconstructed Views
-|--------|--------|--------|
-|        |        |        |
+|   |   |   |   |
+|---|---|---|---|
+|![im1](https://i.imgur.com/ScZP7yP.png)   |![im2](https://i.imgur.com/3ZHobbK.png)   |![im3](https://i.imgur.com/nsOJqii.png)   |![im4](https://i.imgur.com/B3oTCff.png)   |
 ## Resources
