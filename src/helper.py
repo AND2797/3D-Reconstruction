@@ -1,13 +1,10 @@
 """
-Homework4.
 Helper functions.
-
 Written by Chen Kong, 2018.
 """
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.optimize
-# import submission as sub
+
 import matplotlib
 matplotlib.use('TKAgg')
 import numpy as np
