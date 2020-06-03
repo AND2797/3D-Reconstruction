@@ -1,5 +1,5 @@
 # 3D-Reconstruction
-Implementation of stereo-reconstruction algorithm. Reprojects points in relative 3D space using triangulation and stereo-matching from a pair of calibrated images.
+Implementation of stereo-reconstruction algorithm. Reprojects points in relative 3D space using triangulation and stereo-matching from a pair of calibrated images.<br/>
 **helper.py**: subset of helper functions courtesy 16-720 course staff. Some useful functionalities : refines F matrix using Modified Powell's minimization, calculating all possible M2s.
 ## Algorithm
 **Given:** Stereo-rectified pair of images, given camera intrinsics (K<sub>1</sub>, K<sub>2</sub>), point correspondences between left and right images, also given a set of 'identified features' (x<sub>1</sub>, y<sub>1</sub>) coordinate pairs corresponding to image1. 
