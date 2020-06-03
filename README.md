@@ -17,11 +17,12 @@ A high-level overview of the algorithm is given below -
 
 
 ## Results
+### Stereo-Images
 | Image1  | Image2  |
 |---------|---------|
 |![im1](https://i.imgur.com/4cCAwyT.png)         | ![im2](https://i.imgur.com/aa1Xnjs.png)        |
 
-|Reconstructed Views|
+### Reconstructed Views
 |--------|--------|--------|
 |        |        |        |
 ## Resources
