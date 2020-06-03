@@ -4,7 +4,7 @@ Written by Chen Kong, 2018.
 """
 import numpy as np
 import matplotlib.pyplot as plt
-
+from scipy.optimize import fmin_powell
 import matplotlib
 matplotlib.use('TKAgg')
 import numpy as np
@@ -31,7 +31,7 @@ def _objective_F(f, pts1, pts2):
     return r
 
 def refineF(F, pts1, pts2):
-    f = scipy.optimize.fmin_powell(
+    f = fmin_powell(
         lambda x: _objective_F(x, pts1, pts2), F.reshape([-1]),
         maxiter=100000,
         maxfun=10000
