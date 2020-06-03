@@ -21,4 +21,7 @@ A high-level overview of the algorithm is given below -
 |---------|---------|
 |![im1](https://i.imgur.com/4cCAwyT.png)         | ![im2](https://i.imgur.com/aa1Xnjs.png)        |
 
+|Reconstructed Views|
+|--------|--------|--------|
+|        |        |        |
 ## Resources
